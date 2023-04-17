@@ -38,3 +38,21 @@ def number_generator():
 
 secret_number = number_generator()
 
+
+def bull_counter(list1, list2):
+    '''
+    Counts the number of digits that are in the correct position
+    '''
+    bull_counter = 0
+    for i in range(4):
+        if list1[i] == list2[i]:
+            bull_counter += 1
+    return bull_counter
+
+result_1 = bull_counter([1,2,3,4], [1,2,3,4])
+print(result_1)
+
+
+def cow_counter(list1, list2):
+
+
