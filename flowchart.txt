@@ -30,7 +30,10 @@ Invalid data: Exactly 4-digit number required, you provided x-digit number.
 -------------------------------------------------------------------------
 Invalid data: Each digit of your number should be unique. 
 -------------------------------------------------------------------------
-Invalid data: The number you have entered has already been used by you previously. 
+Invalid data: You should not leave an empty field as your input. 
+-------------------------------------------------------------------------
+Invalid data: The number you have entered has already been used. 
+You cannot use it twice since it makes no sense.
 -------------------------------------------------------------------------
 Pease make your guess, input your 4-unique digit number:
 -------------------------------------------------------------------------
@@ -56,7 +59,8 @@ Pease make your guess, input your 4-unique digit number:
 .....................
 
 -------------------------------------------------------------------------
-Great!!! You are completely rigt! The number is 4539))) Let's try again...
+Great!!! You are completely rigt! The number is 4539)))
+You used 5 attempts to guess the number. Let's try again...
 -------------------------------------------------------------------------
 Press Enter button to generate computer's secret number
 -------------------------------------------------------------------------

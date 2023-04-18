@@ -32,38 +32,67 @@ def number_generator():
         if a not in list_num:
             list_num.append(a)
 
-    print(list_num)
     return list_num
 
 
 secret_number = number_generator()
 
 
-def bull_counter(list1, list2):
+class Guess:
     '''
-    Counts the number of digits that are in the correct position
+    Main Guess class. It takes two lists as parameters during initialization.
+    The first parameter is passed as an argument when creating an instance of
+    the class, which is based on user input. The second parameter, by default,
+    contains a list of digits of the secret number.
+    Contains class attribute guess_list which adds to list instance attributes 
+    after each initialization
+
     '''
-    bull_counter = 0
-    for i in range(4):
-        if list1[i] == list2[i]:
-            bull_counter += 1
-    return bull_counter
+    guess_list = []
 
-result_1 = bull_counter([1,2,3,4], [1,2,3,4])
-print(result_1)
+    def __init__(self, my_guess, secret=secret_number):
+        self.my_guess = my_guess
+        self.secret = secret
+        Guess.guess_list.append(self)
+
+    def bull_counter(self):
+        '''
+        Counts the number of digits that are in the correct position
+        '''
+        bull_counter = 0
+        for i in range(4):
+            if self.my_guess[i] == self.secret[i]:
+                bull_counter += 1
+        return bull_counter
+
+    def cow_counter(self):
+        '''
+        Counts the number of digits that are in the chosen number
+        '''
+        cow_counter = 0
+        for i in range(4):
+            if (self.my_guess[i] in self.secret) and (self.my_guess[i] != self.secret[i]):
+                cow_counter += 1
+        return cow_counter
+
+    def show_all_scores(self):
+        for i in Guess.guess_list:
+            print(i.my_guess)
 
 
-def cow_counter(list1, list2):
-    '''
-    Counts the number of digits that are in the chosen number
-    '''
-    cow_counter = 0
-    for i in range(4):
-        if (list1[i] in list2) and (list1[i] != list2[i]):
-            cow_counter += 1
-    return cow_counter
+guess1 = Guess([2, 4, 5, 6])
+guess2 = Guess([2, 7, 5, 0])
+guess3 = Guess([1, 9, 3, 6])
+# BULL1 = guess1.bull_counter()
+# COW1 = guess1.cow_counter()
+# print(secret_number)
+# print(f'{guess1.my_guess}|{BULL1}-{COW1}')
+guess3.show_all_scores()
 
-result_2 = cow_counter([4,3,2,5], [1,2,3,4])
-print(result_2)
+
+
+
+
+
 
 
