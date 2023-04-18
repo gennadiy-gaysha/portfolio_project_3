@@ -22,7 +22,7 @@ Generating secret number...
 Computer's secret number was successfully generated! (e.g. 4539)
 You can quit the game at any time by clicking Esc button
 -------------------------------------------------------------------------
-Pease make your guess, input your 4-unique digit number:
+Pease make your guess, input your 4 unique-digit number:
 -------------------------------------------------------------------------
 Invalid data: invalid literal for int() with base 10: 'we', please try again.
 -------------------------------------------------------------------------

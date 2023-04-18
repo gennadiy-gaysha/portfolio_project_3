@@ -76,8 +76,14 @@ class Guess:
         return cow_counter
 
     def show_all_scores(self):
+        '''
+        Generates a dictionary of guess/score pairs as key|value pairs
+        '''
+        all_scores = {}
         for i in Guess.guess_list:
-            print(i.my_guess)
+            guess_string = ''.join(str(num) for num in i.my_guess)
+            all_scores[guess_string] = [i.bull_counter(), i.cow_counter()]
+        return all_scores
 
 
 guess1 = Guess([2, 4, 5, 6])
@@ -85,9 +91,10 @@ guess2 = Guess([2, 7, 5, 0])
 guess3 = Guess([1, 9, 3, 6])
 # BULL1 = guess1.bull_counter()
 # COW1 = guess1.cow_counter()
-# print(secret_number)
+print(secret_number)
 # print(f'{guess1.my_guess}|{BULL1}-{COW1}')
-guess3.show_all_scores()
+a = guess1.show_all_scores()
+print(a)
 
 
 
