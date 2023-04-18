@@ -54,5 +54,16 @@ print(result_1)
 
 
 def cow_counter(list1, list2):
+    '''
+    Counts the number of digits that are in the chosen number
+    '''
+    cow_counter = 0
+    for i in range(4):
+        if (list1[i] in list2) and (list1[i] != list2[i]):
+            cow_counter += 1
+    return cow_counter
+
+result_2 = cow_counter([4,3,2,5], [1,2,3,4])
+print(result_2)
 
 

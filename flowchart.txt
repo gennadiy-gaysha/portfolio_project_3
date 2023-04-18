@@ -1,0 +1,62 @@
+-------------------------------------------------------------------------
+Welcome to brainstorming BULLS AND COWS GAME!!!
+-------------------------------------------------------------------------
+The rules of Bulls and Cows:
+1. The game is played with a 4-digit number, in which each digit is unique.
+2. The computer chooses a random number, which the player tries to guess.
+3. The player makes a guess by entering a 4-digit number.
+4. If the player guesses a digit that is in the correct position in the
+chosen number, it is called a "bull".
+5. If the player guesses a digit that is in the chosen number, but in a
+different position, it is called a "cow".
+6. The computer responds to each guess with the number of bulls and cows.
+For example, if the chosen number is 4827 and the player guesses 1234, the
+computer would respond with "0 bulls, 2 cow" because the player guessed the
+digit 2, which is in the chosen number, but in a different position.
+7. The player continues to guess until they correctly guess the entire
+number (i.e., four bulls).
+-------------------------------------------------------------------------
+Press Enter button to generate computer's secret number
+-------------------------------------------------------------------------
+Generating secret number...
+Computer's secret number was successfully generated! (e.g. 4539)
+You can quit the game at any time by clicking Esc button
+-------------------------------------------------------------------------
+Pease make your guess, input your 4-unique digit number:
+-------------------------------------------------------------------------
+Invalid data: invalid literal for int() with base 10: 'we', please try again.
+-------------------------------------------------------------------------
+Invalid data: Exactly 4-digit number required, you provided x-digit number.
+-------------------------------------------------------------------------
+Invalid data: Each digit of your number should be unique. 
+-------------------------------------------------------------------------
+Invalid data: The number you have entered has already been used by you previously. 
+-------------------------------------------------------------------------
+Pease make your guess, input your 4-unique digit number:
+-------------------------------------------------------------------------
+2937
+-------------------------------------------------------------------------
+2-9-3-7 | 2-1
+-------------------------------------------------------------------------
+Pease make your guess, input your 4-unique digit number:
+-------------------------------------------------------------------------
+5416
+-------------------------------------------------------------------------
+2-9-3-7 | 2-1
+5-4-1-6 | 2-0
+-------------------------------------------------------------------------
+Pease make your guess, input your 4-unique digit number:
+-------------------------------------------------------------------------
+8093
+-------------------------------------------------------------------------
+2-9-3-7 | 2-0
+5-4-1-6 | 2-0
+8-0-3-9 | 2-2
+-------------------------------------------------------------------------
+.....................
+
+-------------------------------------------------------------------------
+Great!!! You are completely rigt! The number is 4539))) Let's try again...
+-------------------------------------------------------------------------
+Press Enter button to generate computer's secret number
+-------------------------------------------------------------------------
