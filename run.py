@@ -85,10 +85,39 @@ class Guess:
             all_scores[guess_string] = [i.bull_counter(), i.cow_counter()]
         return all_scores
 
+
+
 def get_guess():
-    guess_string = input('Pease make your guess, input your 4-unique digit number: ')
+    '''
+    Recieves guess number from the User.  
+    The loop will repeatedly request data, until it is valid.
+    '''
+    while True:
+        guess_string = input('Pease make your guess, input your 4-unique digit number: ')
+        if validate_guess(guess_string):
+            break
+    # converting user input (numerical string) into a list of numbers
     users_guess = [int(num) for num in list(guess_string)]
     return users_guess
+
+
+def validate_guess(values):
+    '''
+    Inside the try, converts all string values into integers.
+    Raises ValueError if strings cannot be converted into int,
+    or if there aren't exactly 4 values.
+    '''
+    try:
+        [int(i) for i in values]
+        if len(values) != 4:
+            raise ValueError(f'Exactly 4 values required, you provided {len(values)}')
+    except ValueError as err:
+        print(f'Invalid data: {err}, please try again.\n')
+        return False
+        
+    return True
+
+
 
 
 guess1 = Guess(get_guess(), secret_number)
@@ -104,6 +133,8 @@ print(secret_number)
 # print(f'{guess1.my_guess}|{BULL1}-{COW1}')
 a = guess1.show_all_scores()
 print(a)
+b = list(guess1.show_all_scores().keys())
+print(b)
 
 
 
