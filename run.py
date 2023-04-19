@@ -50,7 +50,7 @@ class Guess:
     '''
     guess_list = []
 
-    def __init__(self, my_guess, secret=secret_number):
+    def __init__(self, my_guess, secret):
         self.my_guess = my_guess
         self.secret = secret
         Guess.guess_list.append(self)
@@ -85,10 +85,19 @@ class Guess:
             all_scores[guess_string] = [i.bull_counter(), i.cow_counter()]
         return all_scores
 
+def get_guess():
+    guess_string = input('Pease make your guess, input your 4-unique digit number: ')
+    users_guess = [int(num) for num in list(guess_string)]
+    return users_guess
 
-guess1 = Guess([2, 4, 5, 6])
-guess2 = Guess([2, 7, 5, 0])
-guess3 = Guess([1, 9, 3, 6])
+
+guess1 = Guess(get_guess(), secret_number)
+guess2 = Guess(get_guess(), secret_number)
+guess3 = Guess(get_guess(), secret_number)
+
+# guess1 = Guess([2, 4, 5, 6])
+# guess2 = Guess([2, 7, 5, 0])
+# guess3 = Guess([1, 9, 3, 6])
 # BULL1 = guess1.bull_counter()
 # COW1 = guess1.cow_counter()
 print(secret_number)
