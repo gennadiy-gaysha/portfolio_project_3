@@ -121,7 +121,7 @@ def get_guess():
     '''
     while True:
         guess_string = input(
-            '''Please make your guess, input your 4-unique digit number:
+            '''Please make your guess, input your four unique-digit number:
 -------------------------------------------------------------------------\n''')
         if validate_guess(guess_string):
             break
@@ -137,44 +137,52 @@ def validate_guess(values):
     Inside the try, converts all string values into integers.
     Raises ValueError if strings cannot be converted into int,
     or if there aren't exactly 4 values.
-    '''
-    try:
-        if len(values) != 4 and len(values) != 0:
-            raise ValueError(
-                f'Exactly 4 values required, you provided {len(values)}')
-    except ValueError as err:
-        print(f'Invalid data: {err}, please try again.\n')
-        return False
-
-    try:
-        if len(values) == 0:
-            raise ValueError('You should not leave an empty field as your input.')
-    except ValueError as err:
-        print(f'{err}\n')
-        return False
-
+    '''   
     try:
         if len([i for i in values if not i.isdigit()]) > 0:
             raise ValueError(' , '.join([i for i in values if not i.isdigit()]))
     except ValueError as err:
-        print(f'Your input should be a four-digit number with unique digits, but it has {err} sign(s) instead.')
+        print(f'Invalid data: your input contains {err} character(s). Try again please.')
+        return False
+
+    try:
+        if len(values) != 4 and len(values) != 0:
+            raise ValueError(
+                f'exactly 4 values required, you provided {len(values)}')
+    except ValueError as err:
+        print(f'Invalid data: {err}. Try again please.\n')
+        return False
+
+    try:
+        if len(values) == 0:
+            raise ValueError('you should not leave an empty field.')
+    except ValueError as err:
+        print(f'Invalid data: {err}. Try again please.\n')
         return False
 
     try:
         if values in list(guess_list):
             raise ValueError(values)
     except ValueError as err:
-        print(f'You have already make this guess: {err}. Try again please.')
+        print(f'Invalid data: you have already make this guess: {err}. Try again please.')
         return False
 
-    try: 
+    try:
         if len(values) != len(set(values)):
             raise ValueError(' and '.join(str(x) for x in set([i for i in values if values.count(i) > 1])))
     except ValueError as err:
-        print(f'You have repetetive digit(s) in your guess: {err}. Try again please.')
+        print(f'Invalid data: you have repetetive digit(s) in your guess: {err}. Try again please.')
         return False
 
     return True
+
+
+def restart_game():
+    global secret_number, guess_list
+    secret_number = number_generator()
+    guess_list = []
+    Guess.guess_list = []
+    print("Game restarted. New secret number is successfully generated.")
 
 
 def main():
@@ -185,14 +193,18 @@ def main():
             break
     print('''
 Congratulations! You win!!!
-Input Y if you want to play again. 
-To quit the game input N
+Input Y if you want to play again. To quit the game input N
 ''')
-    users_choice = input()
-    if users_choice.lower() == 'y':
-        main()
-    elif users_choice.lower() == 'n':
-        return
+    while True:
+        users_choice = input()
+        if users_choice.lower() == 'y':
+            restart_game()
+            print(secret_number)
+            main()
+            return False
+        if users_choice.lower() == 'n':
+            return False
+        print("Invalid input. Please input Y or N to confirm your choice")
 
 
 main()
