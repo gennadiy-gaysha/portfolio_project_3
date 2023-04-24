@@ -25,6 +25,7 @@ err_color = Fore.RED
 win_bcolor = Back.RED
 win_fcolor = Fore.LIGHTWHITE_EX
 variable_color = Fore.LIGHTYELLOW_EX
+make_guess = Fore.LIGHTGREEN_EX
 dim = Style.DIM
 reset_all = Style.RESET_ALL
 
@@ -137,9 +138,9 @@ def get_guess():
     The loop will repeatedly request data, until it is valid.
     '''
     while True:
-        guess_string = input(
+        guess_string = input(make_guess + 
             '''Please make your guess, input your four unique-digit number:
--------------------------------------------------------------------------\n''')
+-------------------------------------------------------------------------\n''' + reset_all)
         if validate_guess(guess_string):
             break
     # converting user input (numerical string) into a list of numbers
