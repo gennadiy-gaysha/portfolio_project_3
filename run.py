@@ -159,7 +159,7 @@ def validate_guess(values):
         if len([i for i in values if not i.isdigit()]) > 0:
             raise ValueError(f'your input contains unacceptable character(s): {variable_color}{" , ".join([i for i in values if not i.isdigit()])}{reset_all}')
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again please.')
+        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!')
         return False
 
     try:
@@ -167,28 +167,28 @@ def validate_guess(values):
             raise ValueError(
                 f'exactly 4 values required, you provided {variable_color}{len(values)}{reset_all}')
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again please.\n')
+        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!\n')
         return False
 
     try:
         if len(values) == 0:
             raise ValueError('you should not leave an empty field')
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again please.\n')
+        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!\n')
         return False
 
     try:
         if values in list(guess_list):
             raise ValueError(f'you have already make this guess: {variable_color}{values}{reset_all}')
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again please.')
+        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!')
         return False
 
     try:
         if len(values) != len(set(values)):
             raise ValueError(f"you have repetetive digit(s) in your guess: {variable_color}{' and '.join(str(x) for x in {i for i in values if values.count(i) > 1})}{reset_all}")
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again please.')
+        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!')
         return False
 
     return True
@@ -221,7 +221,7 @@ Input Y if you want to play again. To quit the game input N.
             main()
             return False
         if users_choice.lower() == 'n':
-            print('"You have successfully exited the game. To play again, click on the "RUN PROGRAM" button at the top of this window.')
+            print('You have successfully exited the game. To play again, click on the "RUN PROGRAM" button at the top of this window.')
             return False
         print(err_color + f"Invalid input {variable_color}{users_choice}{reset_all}. " + err_color + "Please input Y or N to confirm your choice" + reset_all)
     
