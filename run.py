@@ -21,12 +21,12 @@ from colorama import Fore, Back, Style
 
 line_color = Fore.LIGHTBLUE_EX
 rules_color = Fore.LIGHTYELLOW_EX
-err_color = Fore.RED                
+err_color = Fore.RED
 win_bcolor = Back.RED
-win_fcolor = Fore.LIGHTWHITE_EX              
-variable_color = Fore.LIGHTYELLOW_EX       
-dim = Style.DIM                     
-reset_all = Style.RESET_ALL            
+win_fcolor = Fore.LIGHTWHITE_EX
+variable_color = Fore.LIGHTYELLOW_EX
+dim = Style.DIM
+reset_all = Style.RESET_ALL
 
 
 def game_rules():
@@ -199,7 +199,7 @@ def restart_game():
     secret_number = number_generator()
     guess_list = []
     Guess.guess_list = []
-    print("Game restarted. New secret number is successfully generated.")
+    print("Game restarted. New secret number was successfully generated.")
 
 
 def main():
@@ -214,7 +214,7 @@ def main():
 Input Y if you want to play again. To quit the game input N.
 -------------------------------------------------------------------------''')
     while True:
-        users_choice = input()
+        users_choice = input('\n')
         if users_choice.lower() == 'y':
             restart_game()
             print(secret_number)
