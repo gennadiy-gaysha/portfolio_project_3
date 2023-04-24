@@ -153,7 +153,8 @@ def validate_guess(values):
         if len([i for i in values if not i.isdigit()]) > 0:
             raise ValueError(f'your input contains unacceptable character(s): {variable_color}{" , ".join([i for i in values if not i.isdigit()])}{reset_all}')
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!')
+        print(f'''Invalid data: {err_color}{err}{reset_all}.
+Try again.''')
         return False
 
     try:
@@ -162,14 +163,16 @@ def validate_guess(values):
                             f"exactly 4 values required, you provided "
                             f"{variable_color}{len(values)}{reset_all}")
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!\n')
+        print(f'''Invalid data: {err_color}{err}{reset_all}.
+Try again.''')
         return False
 
     try:
         if len(values) == 0:
             raise ValueError('you should not leave an empty field')
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!\n')
+        print(f'''Invalid data: {err_color}{err}{reset_all}.
+Try again.''')
         return False
 
     try:
@@ -177,14 +180,16 @@ def validate_guess(values):
             raise ValueError(f'you have already made this guess: '
                             f'{variable_color}{values}{reset_all}')
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!')
+        print(f'''Invalid data: {err_color}{err}{reset_all}.
+Try again.''')
         return False
 
     try:
         if len(values) != len(set(values)):
             raise ValueError(f"you have repetetive digit(s) in your guess: {variable_color}{' and '.join(str(x) for x in {i for i in values if values.count(i) > 1})}{reset_all}")
     except ValueError as err:
-        print(f'Invalid data: {err_color}{err}{reset_all}. Try again!')
+        print(f'''Invalid data: {err_color}{err}{reset_all}.
+Try again.''')
         return False
 
     return True
