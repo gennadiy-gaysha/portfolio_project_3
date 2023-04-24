@@ -221,6 +221,7 @@ Input Y if you want to play again. To quit the game input N.
             main()
             return False
         if users_choice.lower() == 'n':
+            print('"You have successfully exited the game. To play again, click on the "RUN PROGRAM" button at the top of this window.')
             return False
         print(err_color + f"Invalid input {variable_color}{users_choice}{reset_all}. " + err_color + "Please input Y or N to confirm your choice" + reset_all)
     
