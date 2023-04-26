@@ -36,9 +36,9 @@ number (i.e., four bulls).
 2. [Features](#features)
     1. [Secret number generation](#secret-number-generation)
     2. [Input validation](#input-validation)
-    3. [Guess | score output](#guess-|-score-output)
+    3. [Guess and score output](#guess-and-score-output)
     4. [Win game message](#win-game-message)
-    5. [Secret number generation](#restart-/-end-game)
+    5. [Restart or End Game](#restart-or-end-game)
 
 
 3. [Technologies Used](#technologies-used)
@@ -136,24 +136,44 @@ Guess class has also show_all_scores method that generates a dictionary of guess
 
 ## Features
 
-### Secret number generation
-Upon starting or restarting the game, the program generates a list of four unique digits at random that the player must guess. Currently, and for testing purposes, this list is visible, but it will be hidden before project submission: <#print(secret_number)>.
+### Existing features
 
-### Input validation
-Five types of exceptions were used to handle specific errors or unexpected situations that may arise from user input.
+- Secret number generation
+    - Upon starting or restarting the game, the program generates a list of four unique digits at random that the player must guess. Currently, and for testing purposes, this list is visible (indicated by the red arrow), but it will be hidden before project submission: <#print(secret_number)>.
 
-### Guess | score output
-The method show_all_scores in the Guess class prints all the guesses and scores in a user-friendly format on the terminal.
+![Secret number](assets/img/secret-number.png)
 
-### Win game message
-Each time the Player wins, a bright victory message appears and the Player is presented with two options: either to continue playing or to exit the game. 
+- Input validation
+    - Five types of exceptions were used to handle specific errors or unexpected situations that may arise from user input.
 
-### Restart/End Game
-Restarting the game (by pressing 'Y') generates a new secret number, resets all class and class instance data, and begins a new cycle of the game.
+![Exceptions](assets/img/exceptions.png)
 
-If the player exits the game (by pressing 'N'), the following message appears:  
+- Guess and score output
+    - The method show_all_scores in the Guess class prints all the guesses and scores in a user-friendly format on the terminal.
 
-If the player mistakenly presses a key other than 'Y' or 'N', an error message appears prompting them to correct their selection.
+![Guess|score output](assets/img/score-output.png)
+
+- Win game message
+    - Each time the Player wins, a bright victory message appears and the Player is presented with two options: either to continue playing or to exit the game. 
+
+![Win message](assets/img/win-game.png)
+
+- Restart or End Game
+    - Restarting the game (by pressing 'Y') generates a new secret number, resets all class and class instance data, and begins a new cycle of the game.
+
+![Restart game](assets/img/restarting-game.png)
+
+    - If the player exits the game (by pressing 'N'), the following message appears:  
+
+![Exit game](assets/img/exit_game.png)
+
+    - If the player mistakenly presses a key other than 'Y' or 'N', an error message appears prompting them to correct their selection.
+
+![Invalid input](assets/img/invalid-input.png)
+
+### Future features
+
+- Allow the player to choose a number with a different number of digits than 4 (e.g., a 5-digit number) for them to guess.
 
 ## Technologies Used
 
