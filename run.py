@@ -1,20 +1,20 @@
 '''
-This module contains code for the Bulls and Cows
+This module contains code for the Bulls and Cows game
 '''
 from random import randint
 from colorama import Fore, Back, Style
 
 # COLOR VARIABLES
 
-line_color = Fore.LIGHTBLUE_EX
-rules_color = Fore.LIGHTYELLOW_EX
-err_color = Fore.RED
-win_bcolor = Back.RED
-win_fcolor = Fore.LIGHTWHITE_EX
-variable_color = Fore.LIGHTYELLOW_EX
-make_guess = Fore.LIGHTGREEN_EX
-dim = Style.DIM
-reset_all = Style.RESET_ALL
+ILINE_COLOR = Fore.LIGHTBLUE_EX
+RULES_COLOR = Fore.LIGHTYELLOW_EX
+ERR_COLOR = Fore.RED
+WIN_BCOLOR = Back.RED
+WIN_FCOLOR = Fore.LIGHTWHITE_EX
+VARIABLE_COLOR = Fore.LIGHTYELLOW_EX
+MAKE_GUESS = Fore.LIGHTGREEN_EX
+DIM = Style.DIM
+RESET_ALL = Style.RESET_ALL
 
 
 def game_rules():
@@ -22,12 +22,12 @@ def game_rules():
     Prints rules of the game in the terminal
     '''
     print(
-        line_color +
+        ILINE_COLOR +
         '''-------------------------------------------------------------------
 Welcome to brainstorming BULLS AND COWS GAME!!!
 -------------------------------------------------------------------'''
-        + reset_all)
-    print(rules_color + '''The rules of Bulls and Cows:
+        + RESET_ALL)
+    print(RULES_COLOR + '''The rules of Bulls and Cows:
 
 1. The game is played with a four unique-digit number.
 2. The computer generates a random number for the player to guess.
@@ -42,14 +42,14 @@ guesses 1234, the computer would respond with "0 bulls, 2 cow" because
 the player guessed the digit 2, which is in the chosen number, but
 in a different position.
 7. The player continues to guess until they correctly guess the entire
-number (i.e., four bulls).''' + reset_all)
+number (i.e., four bulls).''' + RESET_ALL)
     print(
-        line_color +
+        ILINE_COLOR +
         '''-------------------------------------------------------------------
 The computer has just generated a number that you need to guess.
 Give it a try!
 -------------------------------------------------------------------'''
-        + reset_all)
+        + RESET_ALL)
 
 
 game_rules()
@@ -61,9 +61,9 @@ def number_generator():
     '''
     generated_number = []
     while len(generated_number) < 4:
-        a = randint(0, 9)
-        if a not in generated_number:
-            generated_number.append(a)
+        element = randint(0, 9)
+        if element not in generated_number:
+            generated_number.append(element)
     return generated_number
 
 
@@ -111,7 +111,7 @@ class Guess:
     def show_all_scores(self):
         '''
         Generates a dictionary of guess/score pairs as key|value pairs and
-        prints all scores in the terminal
+        prints all scores in the terminal in user-friendly format
         '''
         all_scores = {}
         for i in Guess.guess_list:
@@ -122,6 +122,9 @@ class Guess:
         return all_scores
 
 
+# this variable is used to keep track of all the user's guesses 
+# that have been made so far, and it is updated every time a new 
+# Guess object is created
 guess_list = []
 
 
@@ -132,14 +135,15 @@ def get_guess():
     '''
     while True:
         guess_string = input(
-            make_guess + '''
+            MAKE_GUESS + '''
 Please make your guess, input your four unique-digit number:
 -------------------------------------------------------------------\n'''
-            + reset_all)
+            + RESET_ALL)
         if validate_guess(guess_string):
             break
     # converting user input (numerical string) into a list of numbers
     users_guess = [int(num) for num in list(guess_string)]
+    # creates an instance og main class Guess
     guess = Guess(users_guess, secret_number)
     guess_list.append(guess_string)
     return guess
@@ -151,9 +155,9 @@ def validate_guess(values):
     '''
     try:
         if len([i for i in values if not i.isdigit()]) > 0:
-            raise ValueError(f'your input contains unacceptable character(s): {variable_color}{" , ".join([i for i in values if not i.isdigit()])}{reset_all}')
+            raise ValueError(f'your input contains unacceptable character(s): {VARIABLE_COLOR}{" , ".join([i for i in values if not i.isdigit()])}{RESET_ALL}')
     except ValueError as err:
-        print(f'''Invalid data: {err_color}{err}{reset_all}.
+        print(f'''Invalid data: {ERR_COLOR}{err}{RESET_ALL}.
 Try again.''')
         return False
 
@@ -161,9 +165,9 @@ Try again.''')
         if len(values) != 4 and len(values) != 0:
             raise ValueError(
                             f"exactly 4 values required, you provided "
-                            f"{variable_color}{len(values)}{reset_all}")
+                            f"{VARIABLE_COLOR}{len(values)}{RESET_ALL}")
     except ValueError as err:
-        print(f'''Invalid data: {err_color}{err}{reset_all}.
+        print(f'''Invalid data: {ERR_COLOR}{err}{RESET_ALL}.
 Try again.''')
         return False
 
@@ -171,24 +175,24 @@ Try again.''')
         if len(values) == 0:
             raise ValueError('you should not leave an empty field')
     except ValueError as err:
-        print(f'''Invalid data: {err_color}{err}{reset_all}.
+        print(f'''Invalid data: {ERR_COLOR}{err}{RESET_ALL}.
 Try again.''')
         return False
 
     try:
         if values in list(guess_list):
             raise ValueError(f'you have already made this guess: '
-                            f'{variable_color}{values}{reset_all}')
+                            f'{VARIABLE_COLOR}{values}{RESET_ALL}')
     except ValueError as err:
-        print(f'''Invalid data: {err_color}{err}{reset_all}.
+        print(f'''Invalid data: {ERR_COLOR}{err}{RESET_ALL}.
 Try again.''')
         return False
 
     try:
         if len(values) != len(set(values)):
-            raise ValueError(f"you have repetetive digit(s) in your guess: {variable_color}{' and '.join(str(x) for x in {i for i in values if values.count(i) > 1})}{reset_all}")
+            raise ValueError(f"you have repetetive digit(s) in your guess: {VARIABLE_COLOR}{' and '.join(str(x) for x in {i for i in values if values.count(i) > 1})}{RESET_ALL}")
     except ValueError as err:
-        print(f'''Invalid data: {err_color}{err}{reset_all}.
+        print(f'''Invalid data: {ERR_COLOR}{err}{RESET_ALL}.
 Try again.''')
         return False
 
@@ -204,11 +208,11 @@ def restart_game():
     guess_list = []
     Guess.guess_list = []
     print(
-                rules_color +
+                RULES_COLOR +
                 '''
 Game restarted. New secret number was successfully generated!
 -------------------------------------------------------------------'''
-                + reset_all)
+                + RESET_ALL)
 
 
 def main():
@@ -222,7 +226,7 @@ def main():
         if guess.bull_counter() == 4:
             break
     print()
-    print(win_bcolor + 'Congratulations! You win!!!' + reset_all)
+    print(WIN_BCOLOR + 'Congratulations! You win!!!' + RESET_ALL)
     print('''-------------------------------------------------------------------
 Input Y if you want to play again. To quit the game input N.
 -------------------------------------------------------------------''')
@@ -235,26 +239,26 @@ Input Y if you want to play again. To quit the game input N.
             return False
         if users_choice.lower() == 'n':
             print(
-                rules_color +
+                RULES_COLOR +
                 '''
 Thank you for playing Bulls and Cows game. Hope to see you soon!
 -------------------------------------------------------------------'''
-                + reset_all)
+                + RESET_ALL)
 
             print(
-                dim +
+                DIM +
                 'To play again, click on the "RUN PROGRAM" button.'
-                + reset_all)
+                + RESET_ALL)
 
             return False
         print(
-            err_color +
-            f"Invalid input {variable_color}{users_choice}{reset_all}. " +
-            err_color +
+            ERR_COLOR +
+            f"Invalid input {VARIABLE_COLOR}{users_choice}{RESET_ALL}. " +
+            ERR_COLOR +
             "Please input Y or N to confirm your choice" +
-            err_color + '''
+            ERR_COLOR + '''
 -------------------------------------------------------------------'''
-            + reset_all)
+            + RESET_ALL)
 
 
 main()
