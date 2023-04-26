@@ -117,13 +117,15 @@ class Guess:
         for i in Guess.guess_list:
             guess_string = ''.join(str(num) for num in i.my_guess)
             all_scores[guess_string] = [i.bull_counter(), i.cow_counter()]
-            print(f'{"-".join(str(num) for num in i.my_guess)} | '
-                  f'{"-".join(str(num) for num in [i.bull_counter(), i.cow_counter()])}')
+            guess_str = "-".join(str(num) for num in i.my_guess)
+            score_list = [i.bull_counter(), i.cow_counter()]
+            score_str = "-".join(str(num) for num in score_list)
+            print(f"{guess_str} | {score_str}")
         return all_scores
 
 
-# this variable is used to keep track of all the user's guesses 
-# that have been made so far, and it is updated every time a new 
+# this variable is used to keep track of all the user's guesses
+# that have been made so far, and it is updated every time a new
 # Guess object is created
 guess_list = []
 
@@ -155,7 +157,12 @@ def validate_guess(values):
     '''
     try:
         if len([i for i in values if not i.isdigit()]) > 0:
-            raise ValueError(f'your input contains unacceptable character(s): {VARIABLE_COLOR}{" , ".join([i for i in values if not i.isdigit()])}{RESET_ALL}')
+            unacceptable_chars = [i for i in values if not i.isdigit()]
+            error_msg = (
+                f'input contains unacceptable character(s): '
+                f'{VARIABLE_COLOR}{", ".join(unacceptable_chars)}{RESET_ALL}'
+            )
+            raise ValueError(error_msg)
     except ValueError as err:
         print(f'''Invalid data: {ERR_COLOR}{err}{RESET_ALL}.
 Try again.''')
@@ -182,7 +189,7 @@ Try again.''')
     try:
         if values in list(guess_list):
             raise ValueError(f'you have already made this guess: '
-                            f'{VARIABLE_COLOR}{values}{RESET_ALL}')
+                             f'{VARIABLE_COLOR}{values}{RESET_ALL}')
     except ValueError as err:
         print(f'''Invalid data: {ERR_COLOR}{err}{RESET_ALL}.
 Try again.''')
@@ -190,7 +197,13 @@ Try again.''')
 
     try:
         if len(values) != len(set(values)):
-            raise ValueError(f"you have repetetive digit(s) in your guess: {VARIABLE_COLOR}{' and '.join(str(x) for x in {i for i in values if values.count(i) > 1})}{RESET_ALL}")
+            repeated_digits = {i for i in values if values.count(i) > 1}
+            repeated_digits_str = ' and '.join(str(x) for x in repeated_digits)
+            error_msg = (
+                        f"you have repetitive digit(s) in your guess: "
+                        f"{VARIABLE_COLOR}{repeated_digits_str}{RESET_ALL}"
+            )
+            raise ValueError(error_msg)
     except ValueError as err:
         print(f'''Invalid data: {ERR_COLOR}{err}{RESET_ALL}.
 Try again.''')

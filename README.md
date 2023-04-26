@@ -39,8 +39,6 @@ number (i.e., four bulls).
     3. [Guess and score output](#guess-and-score-output)
     4. [Win game message](#win-game-message)
     5. [Restart or End Game](#restart-or-end-game)
-
-
 3. [Technologies Used](#technologies-used)
     1. [Languages Used](#languages-used)
     2. [Frameworks, Libraries and Programs Used](#frameworks-libraries-and-programs-used)
@@ -138,36 +136,38 @@ Guess class has also show_all_scores method that generates a dictionary of guess
 
 ### Existing features
 
-- Secret number generation
-    - Upon starting or restarting the game, the program generates a list of four unique digits at random that the player must guess. Currently, and for testing purposes, this list is visible (indicated by the red arrow), but it will be hidden before project submission: <#print(secret_number)>.
+#### Secret number generation
+- Upon starting or restarting the game, the program generates a list of four unique digits at random that the player must guess. Currently, and for testing purposes, this list is visible (indicated by the red arrow), but it will be hidden before project submission: <#print(secret_number)>.
 
 ![Secret number](assets/img/secret-number.png)
 
-- Input validation
-    - Five types of exceptions were used to handle specific errors or unexpected situations that may arise from user input.
+#### Input validation
+- Five types of exceptions were used to handle specific errors or unexpected situations that may arise from user input.
 
 ![Exceptions](assets/img/exceptions.png)
 
-- Guess and score output
-    - The method show_all_scores in the Guess class prints all the guesses and scores in a user-friendly format on the terminal.
+#### Guess and score output
+- show_all_scores method from Guess class prints all the guesses and scores in a user-friendly format on the terminal.
 
 ![Guess|score output](assets/img/score-output.png)
 
-- Win game message
-    - Each time the Player wins, a bright victory message appears and the Player is presented with two options: either to continue playing or to exit the game. 
+#### Win game message
+- Each time the Player wins, a bright victory message appears and the Player is presented with two options: either to continue playing or to exit the game. 
 
 ![Win message](assets/img/win-game.png)
 
-- Restart or End Game
-    - Restarting the game (by pressing 'Y') generates a new secret number, resets all class and class instance data, and begins a new cycle of the game.
+#### Restart or End Game
+- Restarting the game (by pressing 'Y') generates a new secret number, resets all class and class instance data, and begins a new cycle of the game.
 
 ![Restart game](assets/img/restarting-game.png)
 
-    - If the player exits the game (by pressing 'N'), the following message appears:  
+#### Exiting the Game
+- If the player exits the game (by pressing 'N'), the following message appears:  
 
 ![Exit game](assets/img/exit_game.png)
 
-    - If the player mistakenly presses a key other than 'Y' or 'N', an error message appears prompting them to correct their selection.
+#### Invalid input
+- If the player mistakenly presses a key other than 'Y' or 'N', an error message appears prompting them to correct their selection.
 
 ![Invalid input](assets/img/invalid-input.png)
 
@@ -176,37 +176,23 @@ Guess class has also show_all_scores method that generates a dictionary of guess
 - Allow the player to choose a number with a different number of digits than 4 (e.g., a 5-digit number) for them to guess.
 
 ## Technologies Used
+### Language Used
 
-### Languages Used
-* [HTML5](https://en.wikipedia.org/wiki/HTML5)
-* [CSS3](https://en.wikipedia.org/wiki/CSS)
-* [Javascript](https://en.wikipedia.org/wiki/JavaScript)
+* [Python3](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ### Frameworks, Libraries and Programs Used
 
-* [Google Fonts](https://fonts.google.com/)
-    - Google Fonts was used to import the font Press Start 2P into the style.css file. These font is used throughout the site.
+- [GitPod](https://gitpod.io/) was used for writing code, committing, and then pushing to GitHub.
 
-* [GitPod](https://gitpod.io/)
-     - GitPod was used for writing code, committing, and then pushing to GitHub.
+- [GitHub](https://github.com/) was used to store the project after pushing.
 
-* [GitHub](https://github.com/)
-     - GitHub was used to store the project after pushing.
+- [Heroku](https://id.heroku.com/) was used to deploy the application.
 
-* [Am I Responsive?](https://ui.dev/amiresponsive?url=https://gennadiy-gaysha.github.io/portfolio_project_2/index.html)
-    - Am I Responsive was used in order to see responsive design throughout the process and to generate mockup imagery to be used.
+- [PEP8 online check](http://pep8online.com/) was used to validate the Python code.
 
-* [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-    - Chrome DevTools was used during development process for code review and to test responsiveness.
+- [Colorama](https://pypi.org/project/colorama/) library was used to apply color to the terminal text. 
 
-* [W3C Markup Validator](https://validator.w3.org/)
-    - W3C Markup Validator was used to validate the HTML code.
-
-* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
-    - W3C CSS Validator was used to validate the CSS code.
-
-* [JSHint](https://jshint.com/) 
-    - The JSHints JavaScript Code Quality Tool was used to validate the site's JavaScript code.
+- [Diagrams.net](https://app.diagrams.net/) was used to create the program flowchart.
 
 [Back To The Table of Contents ⇧](#table-of-contents)
 
@@ -214,40 +200,22 @@ Guess class has also show_all_scores method that generates a dictionary of guess
 
 ### Testing User Stories
 
- - As a player, I want the game's website to be simple to explore and use so that I can quickly find information about the game and start playing.
-    - All buttons have labels corresponding to their functional purpose.
-    - The information bar in the [Playing area](#play-panel) informs the User about the number of remaining throws or asks the User to record the current score after using all attempts.
+ - As a player, I would like to get acquainted with the game rules first so that I can have a clear understanding of how to play and what is expected of me.
+    - Before starting the game, the [rules](#how-to-play) are displayed in the terminal to provide the user with a complete understanding of how to play. This ensures that every time the game is launched, the user is informed of the rules.
 
- - As a player, I wish for the game to be entertaining and captivating so that I can enjoy my gaming experience and feel motivated to keep playing.
-    - Bright complementary colors and retro design immerse the User in the atmosphere of the 80s, when computer games were just starting to appear.
-    - The simplicity of the design doesn't distract the User from unnecessary details and allows them to focus directly on the game.
-    - Sound effects create a lively atmosphere.
-    - The ability to save 15 results with the highest historical score allows the User to compete with themselves to get on the leaderboard.
-    - The ability to roll the dices by pressing the enter or spacebar key provides additional convenience for the User.
-    - If the User is not satisfied with their current score, they can restart the game at any time by clicking the "Restart game" button.
-    
- - As a player, I would like to have effortless availability to the game rules so that I can easily reference them if needed and play the game with a clear understanding of the rules.
-    - The rules of the game are described in the [Rules section](#game-rules-panel), which the User can access at any time by clicking the button at the bottom of the panel.
+- As a player, I would like to receive short and clear hints on what to do at each step of the game so that I can progress through the game without confusion and frustration.
+    - Throughout the game, prompts are provided to guide the user through each step and ensure their understanding.
 
- - As a player, I expect the game controls to be readily accessible while playing so that I can easily control my game actions and respond quickly to changes in the game.
-    - An imitation clicking effect has been applied to all the buttons for a more interactive User experience.
-    - All main ("Roll dice", "Hold dice") and 3 auxiliary ("Game rules", "Restart game" and "Max score") buttons are presented in the [Playing area](#play-panel)
-    - The User can easily return back to play from any panel by clicking on "Back to play" button.
+- As a player, I would like the color scheme to be pleasing to the eye and not irritating so that I can play the game comfortably without experiencing eye strain or discomfort.
+    - Given the limited design options in a terminal application, a [font color scheme](#color-scheme) that is easy on the eyes was employed.
 
- - As a player, I wish to retain my gained score history so that I can track my progress and compare my scores with other players.
-    - The score area allows the user to enter their current score and displays the total score and bonus points. The fields for entering the score are highlighted in red font for easy identification. 
-    - [Max score panel](#max-score-panel) depicts 15 highes historical scores alongs with the date and time they were gained.
+- As a player, I would like the game to not end if I enter incorrect data and give me a clear understanding of what I did wrong so that I can learn from my mistakes and continue playing the game.
+    - The use of [five types of exceptions](#input-validation) enables the handling of all specific errors or unexpected scenarios that may result from user input.
 
- - As a player, I would like to play the game on various devices so that I can have the flexibility to play the game on my preferred device.
-    - Responsive design across all device sizes was applied.
-
- - As a player, I want to experience lifelike sound effects so that I can fully immerse myself in the game and enhance my overall gaming experience.
-    - To make this game more natural and engaging, there were 5 sound effects applied:
-        - Roll-dice sound
-        - Entered current score sound
-        - Bonus won sound
-        - Yahtzee won sound
-        - End of the game sound
+- As a player, I would like to see all the current results of the game so that it's easier for me to make further decisions.
+    - Along with the current score, the user can view their [previous guesses and scores](#guess-and-score-output) after each attempt.
+- As a player, I would like to have the ability to continue or end the game according to my own wishes so that I can play the game at my own pace and decide when to stop or continue playing.
+    - Once the user has guessed the secret number, they can select [either to start a new game or end the current game](#restart-or-end-game).
 
     ### Code Validation
 
