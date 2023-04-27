@@ -226,21 +226,32 @@ Throughout the development process, the [PEP8 Python Validator](https://pep8ci.h
 ### Manual Testing
 - All tests were performed in my local terminal and the Code Institute Heroku terminal.
 
-| Feature | Outcome | Example | Pass/Fail |
-|---|---|---|---|
-| Guess input | Check if any of the values is not an integer. | ![Not Integer](assets/img/err-not-integer.png) | Pass |
-|  | Check if exactly four digits   were not provided. | ![4 Digits](assets/img/err-4-digits.png) | Pass |
-|  | Check if the value is not an empty   string. | ![Empty String](assets/img/err-empty-string.png) | Pass |
-|  | Check if the same value has   been entered again. | ![Repeating Value](assets/img/err-repeating-value.png) | Pass |
-|  | Check if there are any   repeating digits in the number. | ![Repeating Digit](assets/img/err-repeating-digit.png) | Pass |
-| Bull_counter | Check the count of digits that are in their correct position. | ![Bull Counter](assets/img/test-bulls.png) | Pass |
-| Cow_counter | Check the count of digits in the chosen number. | ![Cow Counter](assets/img/test-cows.png) | Pass |
-| All zeros score | Check the count when the entered digits are not present in the   hidden number. | ![Zero Count](assets/img/test-zero-score.png) | Pass |
-| Win game message | Check the message when the User wins the game. | ![Win Message](assets/img/test-win.png) | Pass |
-| Restart the game | Check the message when the User decides to continue playing. | ![Restart Game](assets/img/test-restart.png) | Pass |
-| Exit the game | Check the message when the User decides to exit the game. | ![Exit Game](assets/img/test-exit.png) | Pass |
-| Y/N input failure | Check the message if the User mistakenly presses a key other   than 'Y' or 'N'. | ![Y/N Input Failure](assets/img/err-not-yn.png) | Pass |
-
+| Feature | Outcome | Pass/Fail |
+|---|---|---|
+| Guess input | Check if any of the values is not an integer. | Pass |
+|  | ![Not Integer](assets/img/err-not-integer.png) |  |
+|  | Check if exactly four digits were not provided. | Pass |
+|  | ![4 Digits](assets/img/err-4-digits.png) |  |
+|  | Check if the value is an empty   string. | Pass |
+|  | ![Empty String](assets/img/err-empty-string.png) |  |
+|  | Check if the same value has been entered again. | Pass |
+|  | ![Repeating Value](assets/img/err-repeating-value.png) |  |
+|  | Check if there are any repeating digits in the number. | Pass |
+|  | ![Repeating Digit](assets/img/err-repeating-digit.png) |  |
+| Bull_counter | Check the count of digits that are in their correct position. | Pass |
+|  | ![Bull Counter](assets/img/test-bulls.png) |  |
+| Cow_counter | Check the count of digits in the chosen number. | Pass |
+|  | ![Cow Counter](assets/img/test-cows.png) |  |
+| All zeros score | Check the count when the entered digits are not present in the   hidden number. | Pass |
+|  | ![Zero Count](assets/img/test-zero-score.png) |  |
+| Win game message | Check the message when the Player wins the game. | Pass |
+|  | ![Win Message](assets/img/test-win.png) |  |
+| Restart the game | Check the message when the Player decides to continue playing. | Pass |
+|  | ![Restart Game](assets/img/test-restart.png) |  |
+| Exit the game | Check the message when the Player decides to exit the game. | Pass |
+|  | ![Exit Game](assets/img/test-exit.png) |  |
+| Y/N input failure | Check the message if the Player mistakenly presses a key other   than 'Y' or 'N'. | Pass |
+|  | ![Y/N Input Failure](assets/img/err-not-yn.png) |  |
 
 [Back To The Table of Contents ⇧](#table-of-contents)
 
@@ -296,23 +307,18 @@ These instructions should help you create a local copy of a code repository usin
 
 ## Credits
 
-- I'm acknowleged to my student friends who introduced me to the computer game Yahtzee back in the 80s. I tried to reproduce the design of that exact game as accurately as possible on my website.
-- Since the JS code for creating an [interactive table](#max-score-panel) with historical results (Max score panel) was written with the help of prompts from the [GPT Chat](https://chat.openai.com/chat), it cannot be considered written by me personally.
-
 ### Content
 
-- Markdown for the testing table in readme.md file was created using [Tables Generator](https://www.tablesgenerator.com/markdown_tables) 
-- Grammar and spelling were checked using the power of [GPT Chat](https://chat.openai.com/chat) and [Grammarly](https://www.grammarly.com/) web app. 
+- I appreciate my school friend for introducing me to this game and playing it with me frequently, which helped us enhance our analytical thinking skills.
+
+- The rules for the Bulls and Cows game were derived from various open-source internet sites, including [Wikipedia](https://en.wikipedia.org/wiki/Bulls_and_Cows).
 
 ### Media
 
-- All sound effects were taken from open source site [https://pixabay.com/](https://pixabay.com/sound-effects/search/dice/).
-- The images used as [Mockups](#mockup) were taken from open source sites.
+- ASCII Art of name of the game was generated by [ASCII Generator](https://ascii-generator.site/)
 
 ### Code
 
-- I've been constantly using [Stack Overflow](https://stackoverflow.com/), 
-[W3Schools](https://www.w3schools.com/) and Chrome Dev tools for inspiration 
-and better understanding the code being implemented.
+- Hints from [ChatGPT](https://chat.openai.com/) helped me fix minor errors (E501: line too long, and E128: continuation line under-indented for visual indent) in my code.
 
 [Back To The Table of Contents ⇧](#table-of-contents)
