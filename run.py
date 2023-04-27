@@ -27,6 +27,13 @@ def game_rules():
 Welcome to brainstorming BULLS AND COWS GAME!!!
 -------------------------------------------------------------------'''
         + RESET_ALL)
+    print(
+        ILINE_COLOR +
+        '''+-++-++-++-++-+ +-++-++-+ +-++-++-++-+
+|B||U||L||L||S| |A||N||D| |C||O||W||S|
++-++-++-++-++-+ +-++-++-+ +-++-++-++-+
+-------------------------------------------------------------------'''
+        + RESET_ALL)
     print(RULES_COLOR + '''The rules of Bulls and Cows:
 
 1. The game is played with a four unique-digit number.
@@ -241,7 +248,8 @@ def main():
     print()
     print(WIN_BCOLOR + 'Congratulations! You win!!!' + RESET_ALL)
     print('''-------------------------------------------------------------------
-Input Y if you want to play again. To quit the game input N.
+Input Y if you want to play again. To quit the game input N. 
+Input field supports upper and lower case.
 -------------------------------------------------------------------''')
     while True:
         users_choice = input()
@@ -268,7 +276,8 @@ Thank you for playing Bulls and Cows game. Hope to see you soon!
             ERR_COLOR +
             f"Invalid input {VARIABLE_COLOR}{users_choice}{RESET_ALL}. " +
             ERR_COLOR +
-            "Please input Y or N to confirm your choice" +
+            "Please input Y or N to confirm your choice\n" +
+            "Input field supports upper and lower case." +
             ERR_COLOR + '''
 -------------------------------------------------------------------'''
             + RESET_ALL)
