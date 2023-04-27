@@ -54,6 +54,7 @@ number (i.e., four bulls).
     1. [Content](#content)
     2. [Media](#media)
     3. [Code](#code)
+8. [Acknowledgements](#acknowledgements)
 
 ## User Experience (UX)
 
@@ -190,7 +191,7 @@ Guess class has also show_all_scores method that generates a dictionary of guess
 
 - [PEP8 online check](http://pep8online.com/) was used to validate the Python code.
 
-- [Colorama](https://pypi.org/project/colorama/) library was used to apply color to the terminal text. 
+- [Colorama](https://pypi.org/project/colorama/) library was used to apply color to the terminal text.
 
 - [Diagrams.net](https://app.diagrams.net/) was used to create the program flowchart.
 
@@ -320,5 +321,15 @@ These instructions should help you create a local copy of a code repository usin
 ### Code
 
 - Hints from [ChatGPT](https://chat.openai.com/) helped me fix minor errors (E501: line too long, and E128: continuation line under-indented for visual indent) in my code.
+
+## Acknowledgements
+
+- My partner for her unwavering love, support, and encouragement throughout this project. Her belief in me has been a driving force, and I could not have done it without her.
+
+- My tutor, Marcel, for his priceless feedback and guidance.
+
+- Code Institute and their fantastic Slack community for their constant support and providing me with the essential knowledge and resources that I needed to successfully finish this project.
+
+
 
 [Back To The Table of Contents ⇧](#table-of-contents)

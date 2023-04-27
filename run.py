@@ -248,7 +248,7 @@ def main():
     print()
     print(WIN_BCOLOR + 'Congratulations! You win!!!' + RESET_ALL)
     print('''-------------------------------------------------------------------
-Input Y if you want to play again. To quit the game input N. 
+Input Y if you want to play again. To quit the game input N.
 Input field supports upper and lower case.
 -------------------------------------------------------------------''')
     while True:
