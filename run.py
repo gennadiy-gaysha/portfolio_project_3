@@ -75,7 +75,7 @@ def number_generator():
 
 
 secret_number = number_generator()
-print(secret_number)
+# print(secret_number)
 
 
 class Guess:
@@ -255,7 +255,7 @@ Input field supports upper and lower case.
         users_choice = input()
         if users_choice.lower() == 'y':
             restart_game()
-            print(secret_number)
+            # print(secret_number)
             main()
             return False
         if users_choice.lower() == 'n':

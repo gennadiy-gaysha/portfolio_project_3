@@ -4,7 +4,9 @@ Bulls and Cows is a Python terminal game, which runs in the Code Institute mock 
 
 ![Responsiveness image](assets/img/responsiveness.png)
 
-[BULLS AND COWS game](https://en.wikipedia.org/wiki/Bulls_and_Cows) is a popular guessing game that can be played by two or more people. The object of the game is to guess a secret code consisting of a sequence of digits. Each guess is compared to the secret code, and the number of "bulls" and "cows" is counted and revealed to the guesser. In this version of the game, the computer generates a secret number which the User must guess.
+[BULLS AND COWS game](https://en.wikipedia.org/wiki/Bulls_and_Cows) is a popular guessing game that can be played by two or more people. The object of the game is to guess a secret code consisting of a sequence of digits. Each guess is compared to the secret code, and the number of "bulls" and "cows" is counted and revealed to the guesser. 
+
+`In this version of the game, the computer generates a secret number which the User must guess.`
 
 ## How to play
 1. The game is played with a four unique-digit number.
