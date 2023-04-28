@@ -144,8 +144,8 @@ def get_guess():
     '''
     while True:
         guess_string = input(
-            MAKE_GUESS + '''
-Please make your guess, input your four unique-digit number:
+            MAKE_GUESS + 
+            '''Please make your guess, input your four unique-digit number:
 -------------------------------------------------------------------\n'''
             + RESET_ALL)
         if validate_guess(guess_string):
