@@ -24,7 +24,7 @@ def game_rules():
     print(
         ILINE_COLOR +
         '''-------------------------------------------------------------------
-Welcome to brainstorming BULLS AND COWS GAME!!!
+Welcome to brainstorming BULLS AND COWS GAME!
 -------------------------------------------------------------------'''
         + RESET_ALL)
     print(
@@ -32,6 +32,11 @@ Welcome to brainstorming BULLS AND COWS GAME!!!
         '''+-++-++-++-++-+ +-++-++-+ +-++-++-++-+
 |B||U||L||L||S| |A||N||D| |C||O||W||S|
 +-++-++-++-++-+ +-++-++-+ +-++-++-++-+
+-------------------------------------------------------------------'''
+        + RESET_ALL)
+    print(
+        ILINE_COLOR +
+        '''Doubles the energy of your morning cup of coffee!!!
 -------------------------------------------------------------------'''
         + RESET_ALL)
     print(RULES_COLOR + '''The rules of Bulls and Cows:
