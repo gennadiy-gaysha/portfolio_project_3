@@ -50,9 +50,10 @@ the chosen number, it is called a "bull".
 in a different position, it is called a "cow".
 6. The computer responds to each guess with the number of bulls
 and cows. For example, if the chosen number is 4827 and the player
-guesses 1234, the computer would respond with "0 bulls, 2 cow" because
-the player guessed the digit 2, which is in the chosen number, but
-in a different position.
+guesses 4273, the computer would respond with "1 bull, 2 cows" (1-2),
+because the player guessed one digit that is in the correct position 
+(4), and two digits that are in the chosen number, but in a different 
+position (2, 7).
 7. The player continues to guess until they correctly guess the entire
 number (i.e., four bulls).''' + RESET_ALL)
     print(
