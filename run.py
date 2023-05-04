@@ -51,11 +51,14 @@ in a different position, it is called a "cow".
 6. The computer responds to each guess with the number of bulls
 and cows. For example, if the chosen number is 4827 and the player
 guesses 4273, the computer would respond with "1 bull, 2 cows" (1-2),
-because the player guessed one digit that is in the correct position 
-(4), and two digits that are in the chosen number, but in a different 
+because the player guessed one digit that is in the correct position
+(4), and two digits that are in the chosen number, but in a different
 position (2, 7).
 7. The player continues to guess until they correctly guess the entire
 number (i.e., four bulls).''' + RESET_ALL)
+    print(ERR_COLOR + 'Your challenge: ', end='' + RESET_ALL)
+    print('try to guess the number ', end='')
+    print('in no more than 7 attempts.' + RESET_ALL)
     print(
         ILINE_COLOR +
         '''-------------------------------------------------------------------
@@ -150,7 +153,7 @@ def get_guess():
     '''
     while True:
         guess_string = input(
-            MAKE_GUESS + 
+            MAKE_GUESS +
             '''Please make your guess, input your four unique-digit number:
 -------------------------------------------------------------------\n'''
             + RESET_ALL)
