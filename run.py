@@ -4,6 +4,9 @@ This module contains code for the Bulls and Cows game
 from random import randint
 from colorama import Fore, Back, Style
 
+DEBUG = False
+
+
 # COLOR VARIABLES
 
 ILINE_COLOR = Fore.LIGHTBLUE_EX
@@ -84,7 +87,9 @@ def number_generator():
 
 
 secret_number = number_generator()
-# print(secret_number)
+
+if DEBUG:
+    print(secret_number)
 
 
 class Guess:
@@ -264,7 +269,10 @@ Input field supports upper and lower case.
         users_choice = input()
         if users_choice.lower() == 'y':
             restart_game()
-            # print(secret_number)
+
+            if DEBUG:
+                print(secret_number)
+
             main()
             return False
         if users_choice.lower() == 'n':

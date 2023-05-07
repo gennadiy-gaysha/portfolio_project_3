@@ -191,7 +191,7 @@ Guess class has also show_all_scores method that generates a dictionary of guess
 
 - [Heroku](https://id.heroku.com/) was used to deploy the application.
 
-- [PEP8 online check](http://pep8online.com/) was used to validate the Python code.
+- [PEP8 online check](https://pep8ci.herokuapp.com/) was used to validate the Python code.
 
 - [Colorama](https://pypi.org/project/colorama/) library was used to apply color to the terminal text.
 
